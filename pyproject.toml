@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "heptagram-api"
+version = "0.0.1"
+description = "An API for the Heptagram Bot"
+authors = ["Vyvy-vi <vyom.j@protonmail.com>"]
+license = "BSD-3-Clause License"
+
+packages = [
+    { include="src", from="." },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = "^0.68.0"
+uvicorn = "^0.14.0"
+pydantic = "^1.8.2"
+ujson = "^4.0.2"
+aiofiles = "^0.7.0"
+Jinja2 = "^3.0.1"
+itsdangerous = "^2.0.1"
+python-dotenv = "^0.19.0"
+pre-commit = "^2.13.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+black = "^21.7b0"
+isort = "^5.9.3"
+pytest = "^6.2.4"
+pre-commit = "^2.13.0"
+taskipy = "^1.8.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "src.main:run"
+
+[tool.taskipy.tasks]
+lint = "flake8 ."
+post_lint = "task format"
+format = "task isort && task black"
+isort = "isort ."
+black = "black ."
+precommit = "pre-commit install --hook-type pre-commit --hook-type pre-push"
+test = "pytest ."
