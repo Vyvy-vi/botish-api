@@ -44,7 +44,65 @@ def jokes_by_id(joke_id: int):
         }
     )
 
+@app.get('/jokes')
+def _jokes(num: Optional[int] = None):
+    if not num:
+        num = len(jokes)
 
+    if num > len(jokes):
+        raise HTTPException(
+            status_code=400,
+            detail=[{
+                "loc": [
+                    "query",
+                    "num"
+                ],
+                "msg": f"Error: the API currently stores less than {num} jokes",
+                "type": "Bad Request"
+            }]
+        )
+
+    random_joke_ids = sorted(random.sample(range(0, len(jokes)), num))
+    return responses.JSONResponse(
+        content=[
+            {'id': joke_id, 'joke': jokes[joke_id]} for joke_id in random_joke_ids
+        ]
+    )
+
+@app.get('/coinflip')
+def _coinflip(num: int = 1):
+    if num < 1:
+        raise HTTPException(
+            status_code=400,
+            detail=[{
+                "loc": [
+                    "query",
+                    "num"
+                ],
+                "msg": f"Error: num should be greater than 0",
+                "type": "Bad Request"
+            }]
+        )
+
+    if num > 10000:
+        raise HTTPException(
+            status_code=400,
+            detail=[{
+                "loc": [
+                    "query",
+                    "num"
+                ],
+                "msg": f"Error: num should be smaller than 10000",
+                "type": "Bad Request"
+            }]
+        )
+
+    return responses.JSONResponse(
+        content={
+            "task": f"coinflip x {num}",
+            "result": random.choices(["Heads", "Tails"], k = num)
+        }
+    )
 
 @app.get('/diceroll')
 def _diceroll(num: int = 1, sides: int = 6):
@@ -91,6 +149,8 @@ def _diceroll(num: int = 1, sides: int = 6):
             "result": random.choices(range(1, sides), k=num)
         }
     )
+
+
 
 def run():
     uvicorn.run("src.main:app", reload=True)
