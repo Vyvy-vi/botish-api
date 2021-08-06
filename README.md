@@ -13,6 +13,7 @@ _Coming soon..._
 - `Python` v3.7+
 - `fastapi` (API framework)
 - `poetry` (dependency manager)
+- `uvicorn` (ASGI server)
 - `pip` (needed to install poetry)
 
 ## Setting up the dev environment
@@ -32,7 +33,7 @@ _Coming soon..._
 
 4. Run the project
    ```
-   poetry run start
+   poetry run task start
    ```
 
 5. Linting your code
@@ -41,4 +42,4 @@ _Coming soon..._
    ```
 ## Usage
 
-<!#TODO: Fill info about usage here, after the API is sorta ready-->
+<!--#TODO: Fill info about usage here, after the API is sorta ready-->
