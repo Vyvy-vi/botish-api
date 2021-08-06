@@ -3,11 +3,8 @@ name = "heptagram-api"
 version = "0.0.1"
 description = "An API for the Heptagram Bot"
 authors = ["Vyvy-vi <vyom.j@protonmail.com>"]
-license = "BSD-3-Clause License"
-
-packages = [
-    { include="src", from="." },
-]
+license = "BSD-3-Clause"
+repository = "https://github.com/Heptgram/api"
 
 [tool.poetry.dependencies]
 python = "^3.7"
@@ -33,14 +30,12 @@ taskipy = "^1.8.1"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.scripts]
-start = "src.main:run"
-
 [tool.taskipy.tasks]
 lint = "flake8 ."
 post_lint = "task format"
 format = "task isort && task black"
 isort = "isort ."
 black = "black ."
+start = "uvicorn src.main:app"
 precommit = "pre-commit install --hook-type pre-commit --hook-type pre-push"
 test = "pytest ."

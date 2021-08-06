@@ -53,10 +53,5 @@ def _diceroll(
         }
     )
 
-
-def run():
-    uvicorn.run("src.main:app", reload=True)
-
-
 if __name__ == "__main__":
-    run()
+    uvicorn.run("src.main:app")
