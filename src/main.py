@@ -1,8 +1,7 @@
 import random
-from typing import Dict, List, Optional
 
 import uvicorn
-from fastapi import FastAPI, HTTPException, Path, Query, responses
+from fastapi import FastAPI, Path, Query, responses
 
 # from pydantic import BaseModel
 
