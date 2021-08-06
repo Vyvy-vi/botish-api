@@ -9,9 +9,12 @@ ENV LC_ALL C.UTF-8
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONFAULTHANDLER 1
 
+# Set pip to have no saved cache
+ENV PIP_NO_CACHE_DIR=false \
+    POETRY_VIRTUALENVS_CREATE=false
+
 # setup poetry
-COPY pyproject.toml .
-COPY poetry .
+COPY pyproject.toml poetry.lock ./
 RUN pip3 install poetry
 RUN poetry install
 
@@ -21,7 +24,7 @@ WORKDIR /home/appuser
 USER appuser
 
 # Transfer source to image
-COPY . .
+COPY src src
 
-# Run bot
-CMD [ "python3", "-m" , "src" ]
+# Run api
+CMD [ "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000" ]

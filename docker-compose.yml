@@ -2,9 +2,12 @@ version: "3.8"
 services:
   db:
     image: mongo:3.6.20
-  bot:
+  api:
     build:
       context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
     environment:
       MONGO_URI: "mongodb://db:27017"
     depends_on:
