@@ -1,7 +1,7 @@
 # Heptagram API
 
 This is an API made for the [Heptagram Bot](https://github.com/Heptagram-Bot/).
-For contributing to the project, check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file. 
+For contributing to the project, check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## Features
 
@@ -42,4 +42,3 @@ _Coming soon..._
 ## Usage
 
 <!#TODO: Fill info about usage here, after the API is sorta ready-->
-
