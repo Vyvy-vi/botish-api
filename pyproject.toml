@@ -4,7 +4,7 @@ version = "0.0.1"
 description = "An API for the Heptagram Bot"
 authors = ["Vyvy-vi <vyom.j@protonmail.com>"]
 license = "BSD-3-Clause"
-repository = "https://github.com/Heptgram/api"
+repository = "https://github.com/Heptgram-Bot/api"
 
 [tool.poetry.dependencies]
 python = "^3.7"
