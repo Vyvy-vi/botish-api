@@ -5,7 +5,15 @@ from fastapi import FastAPI, Path, Query, responses
 
 # from pydantic import BaseModel
 
-app = FastAPI()
+app = FastAPI(
+    title="heptagram-api",
+    description="An API for the Heptagram Bot",
+    contact={"name": "Vyvy-vi", "url": "https://github.com/Vyvy-vi"},
+    license_info={
+        "name": "BSD-3-Clause",
+        "url": "https://github.com/Heptagram-Bot/api/blob/master/LICENSE.md",
+    },
+)
 
 jokes = ["Jokes are going through", "hehe this is a joke", "more jokes"]
 
@@ -52,6 +60,7 @@ def _diceroll(
             "result": random.choices(range(1, sides + 1), k=num),
         }
     )
+
 
 if __name__ == "__main__":
     uvicorn.run("src.main:app")
