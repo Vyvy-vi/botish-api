@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  db:
+    image: mongo:3.6.20
+  bot:
+    build:
+      context: .
+    environment:
+      MONGO_URI: "mongodb://db:27017"
+    depends_on:
+      - db
+    links:
+      - db
+    volumes:
+      - .:/home/appuser
