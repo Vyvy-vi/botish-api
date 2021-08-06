@@ -1,82 +1,63 @@
-import uvicorn
 import random
+from typing import Dict, List, Optional
 
-from typing import Optional, List, Dict
-from fastapi import FastAPI, responses, HTTPException
-
-from fastapi import Path, Query
+import uvicorn
+from fastapi import FastAPI, HTTPException, Path, Query, responses
 
 # from pydantic import BaseModel
 
 app = FastAPI()
 
-jokes = [
-    "Jokes are going through",
-    "hehe this is a joke",
-    "more jokes"
-]
+jokes = ["Jokes are going through", "hehe this is a joke", "more jokes"]
 
 
-@app.get('/')
+@app.get("/")
 def index():
     body = "<h1>The Heptagram API</h1>"
     return responses.HTMLResponse(content=body)
 
-@app.get('/jokes/{joke_id}')
+
+@app.get("/jokes/{joke_id}")
 def jokes_by_id(
-        joke_id: int = Path(
-            ...,
-            title="ID of the Joke to get",
-            ge=0,
-            le=len(jokes)
-        )
-    ):
+    joke_id: int = Path(..., title="ID of the Joke to get", ge=0, le=len(jokes))
+):
 
-    return responses.JSONResponse(
-        content={
-            "joke": jokes[joke_id],
-            "id": joke_id
-        }
-    )
+    return responses.JSONResponse(content={"joke": jokes[joke_id], "id": joke_id})
 
-@app.get('/jokes')
-def _jokes(
-        num: int = Query(1, ge=1, le=len(jokes))
-    ):
+
+@app.get("/jokes")
+def _jokes(num: int = Query(1, ge=1, le=len(jokes))):
     random_joke_ids = sorted(random.sample(range(0, len(jokes)), num))
     return responses.JSONResponse(
-        content=[
-            {'id': joke_id, 'joke': jokes[joke_id]} for joke_id in random_joke_ids
-        ]
+        content=[{"id": joke_id, "joke": jokes[joke_id]} for joke_id in random_joke_ids]
     )
 
-@app.get('/coinflip')
-def _coinflip(
-        num: int = Query(1, ge=1, le=10000)
-    ):
+
+@app.get("/coinflip")
+def _coinflip(num: int = Query(1, ge=1, le=10000)):
     return responses.JSONResponse(
         content={
             "task": f"coinflip x {num}",
-            "result": random.choices(["Heads", "Tails"], k = num)
+            "result": random.choices(["Heads", "Tails"], k=num),
         }
     )
 
-@app.get('/diceroll')
+
+@app.get("/diceroll")
 def _diceroll(
-    num: int = Query(1, ge=1, le=10000),
-    sides: int = Query(6, ge=3, le=10000)
-    ):
+    num: int = Query(1, ge=1, le=10000), sides: int = Query(6, ge=3, le=10000)
+):
     return responses.JSONResponse(
         content={
             "task": f"Diceroll - d{sides} x {num}",
-            "result": random.choices(range(1, sides + 1), k=num)
+            "result": random.choices(range(1, sides + 1), k=num),
         }
     )
-
 
 
 def run():
     uvicorn.run("src.main:app", reload=True)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     run()
