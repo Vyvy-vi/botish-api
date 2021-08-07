@@ -72,7 +72,6 @@ jobs:
 
     - name: Lint code with Flake8
       run: |
-        ls
         python -m flake8 --format='::error file=%(path)s,line=%(row)d,col=%(col)d::[flake8] %(code)s: %(text)s'
 
     - name: Test code with Pytest
