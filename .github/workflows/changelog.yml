@@ -3,12 +3,12 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "feat/gh-actions"
+      - master
 
 jobs:
   changelog:
     runs-on: ubuntu-latest
-    if: github.repository == 'Metafam/shepherd-bot'
+    if: github.repository == 'Heptagram-Bot/api'
 
     steps:
       - uses: actions/checkout@v2
@@ -17,16 +17,16 @@ jobs:
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
-          github-token: ${{ secrets.CHANGELOG_RELEASE }}
-          
+          github-token: ${{ secrets.ACCESS_TOKEN }}
           version-file: './pyproject.toml'
+          version-path: 'tool.poetry.version'
           output-file: 'CHANGELOG.md'
 
       - name: Create Release
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.CHANGELOG_RELEASE }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
