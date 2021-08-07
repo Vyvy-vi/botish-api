@@ -1,0 +1,33 @@
+name: Changelog and Releases
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "feat/gh-actions"
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    if: github.repository == 'Metafam/shepherd-bot'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.CHANGELOG_RELEASE }}
+          
+          version-file: './pyproject.toml'
+          output-file: 'CHANGELOG.md'
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.CHANGELOG_RELEASE }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
