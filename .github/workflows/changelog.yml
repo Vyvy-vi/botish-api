@@ -1,0 +1,35 @@
+name: Changelog and Releases
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    if: github.repository == 'Heptagram-Bot/api'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.ACCESS_TOKEN }}
+          version-file: './pyproject.toml'
+          version-path: 'tool.poetry.version'
+          fallback-version: "0.0.1"
+          release-count: 0
+          output-file: 'CHANGELOG.md'
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}

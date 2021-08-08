@@ -1,0 +1,102 @@
+# Parts of this workflow were sourced from https://github.com/python-discord/bot/blob/091417c2299b23221aa02212f60e6d8f7bfaf2c4/.github/workflows/lint-test.yml
+
+name: Format, Lint, Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    paths-ignore:
+      - .github/**
+
+jobs:
+  format_lint_test:
+    # Check Formatting, Lint Code, Test Code
+    runs-on: ubuntu-latest
+    env:
+
+      # Configure pip to cache dependencies and do a user install
+      PIP_NO_CACHE_DIR: false
+      PIP_USER: 1
+
+      # Prevent Poetry from using a virtualenv
+      POETRY_VIRTUALENVS_CREATE: false
+
+      # Specify explicit paths for python dependencies
+      # so we know which directories to cache
+      POETRY_CACHE_DIR: ${{ github.workspace }}/.cache/py-user-base
+      PYTHONUSERBASE: ${{ github.workspace }}/.cache/py-user-base
+
+
+    steps:
+    - name: Add custom PYTHONUSERBASE to PATH
+      run: echo '${{ env.PYTHONUSERBASE }}/bin/' >> $GITHUB_PATH
+
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.8
+      id: python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    # This step caches our Python dependencies. To make sure we
+    # only restore a cache when the dependencies, the python version,
+    # the runner operating system, and the dependency location haven't
+    # changed, we create a cache key that is a composite of those states.
+    #
+    # Only when the context is exactly the same, we will restore the cache.
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      id: python_cache
+      with:
+        path: ${{ env.PYTHONUSERBASE }}
+        key: "python-0-${{ runner.os }}-${{ env.PYTHONUSERBASE }}-\
+        ${{ steps.python.outputs.python-version }}-\
+        ${{ hashFiles('./pyproject.toml', './poetry.lock') }}"
+
+    # Install dependencies if no cache recovered
+    - name: Install dependencies
+      if: steps.python_cache.outputs.cache-hit != 'true'
+      run: |
+        python -m pip install --upgrade pip
+        pip install poetry
+        poetry install
+
+    - name: Check code-formatting with Black
+      run: |
+        python -m black . --check --diff
+
+    - name: Lint code with Flake8
+      run: |
+        python -m flake8 --format='::error file=%(path)s,line=%(row)d,col=%(col)d::[flake8] %(code)s: %(text)s'
+
+    - name: Test code with Pytest
+      run: |
+        # pytest .
+        echo "No tests found..."
+
+    # Prepare the Pull Request Payload artifact. If this fails, we
+    # we fail silently using the `continue-on-error` option. It's
+    # nice if this succeeds, but if it fails for any reason, it
+    # does not mean that our lint-test checks failed.
+    - name: Prepare Pull Request Payload artifact
+      id: prepare-artifact
+      if: always() && github.event_name == 'pull_request'
+      continue-on-error: true
+      run: cat $GITHUB_EVENT_PATH | jq '.pull_request' > pull_request_payload.json
+
+    # This only makes sense if the previous step succeeded. To
+    # get the original outcome of the previous step before the
+    # `continue-on-error` conclusion is applied, we use the
+    # `.outcome` value. This step also fails silently.
+    - name: Upload a Build Artifact
+      if: always() && steps.prepare-artifact.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@v2
+      with:
+        name: pull-request-payload
+        path: pull_request_payload.json
