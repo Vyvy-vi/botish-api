@@ -131,3 +131,17 @@ def test_get_jokes():
     response = client.get(f"/jokes?num={len(jokes) - 1}")
     assert response.status_code == 200
     assert len(response.json()["jokes"]) == len(jokes) - 1
+
+
+def test_roll_dice():
+    # Check if it works
+    response = client.get("/diceroll")
+    assert response.status_code == 200
+    assert response.json()["task"] == "diceroll - d6 x 1"
+    assert len(response.json()["result"]) == 1
+
+    for result in response.json()["result"]:
+        assert type(result) == int
+        assert result > 0 and result < 7
+
+    # Check if it works for custom sides and multiple rounds
