@@ -1,4 +1,16 @@
-# 0.1.0 (2021-08-08)
+# [0.2.0](https://github.com/Heptagram-Bot/api/compare/v0.1.0...v0.2.0) (2021-08-10)
+
+
+### Features
+
+* add route for coinflip ([0ec031e](https://github.com/Heptagram-Bot/api/commit/0ec031ec5b92f9e8cc081af62e99ba8b9f114abf))
+* add route for diceroll ([f76f213](https://github.com/Heptagram-Bot/api/commit/f76f213b23e46e34da47ccab4fb6f7500ba21c3a))
+* add route for jokes ([8d3615c](https://github.com/Heptagram-Bot/api/commit/8d3615ca24532036d2c5c6b4e3b84cb235e7d2e7))
+* modularised project structure ([6ff0511](https://github.com/Heptagram-Bot/api/commit/6ff0511775b45adeee9768a9c4cf934504a99873))
+
+
+
+# [0.1.0](https://github.com/Heptagram-Bot/api/compare/92624ef2d16459fed1a71cc4195eb7e205ac3c58...v0.1.0) (2021-08-08)
 
 
 ### Bug Fixes
@@ -16,3 +28,6 @@
 * diceroll and coinflip routes ([dc8e66c](https://github.com/Heptagram-Bot/api/commit/dc8e66cda8c8c28a5f99c50520424d0822e0277a))
 * Query constraints for routes ([ca97955](https://github.com/Heptagram-Bot/api/commit/ca979556027355e90c4f58d5bec4fe584c05069b))
 * set up docker config ([efbd608](https://github.com/Heptagram-Bot/api/commit/efbd608d090e6ac7a65357d0a3ba4747a7afb1d5))
+
+
+
