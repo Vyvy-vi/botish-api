@@ -57,6 +57,7 @@ repos:
         name: pytest
         description: Runs tests on the project
         language: system
+        pass_filenames: false
         entry: poetry run pytest
         types: [python]
         stages: [push]
