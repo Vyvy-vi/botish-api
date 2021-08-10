@@ -1,5 +1,3 @@
-import random
-
 import uvicorn
 from fastapi import FastAPI, responses
 
@@ -18,6 +16,7 @@ app = FastAPI(
 app.include_router(coinflip.router)
 app.include_router(jokes.router)
 app.include_router(diceroll.router)
+
 
 @app.get("/")
 def index():
