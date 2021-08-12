@@ -57,6 +57,7 @@ repos:
         name: pytest
         description: Runs tests on the project
         language: system
-        entry: echo "No tests found"
+        pass_filenames: false
+        entry: poetry run pytest
         types: [python]
         stages: [push]
