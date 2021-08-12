@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/Heptagram-Bot/api/compare/v0.2.0...v0.3.0) (2021-08-12)
+
+
+### Features
+
+* add basic tests ([#14](https://github.com/Heptagram-Bot/api/issues/14)) ([acbc8f4](https://github.com/Heptagram-Bot/api/commit/acbc8f455827106b3ebc76091ce65668bdb169ff))
+
+
+
 # [0.2.0](https://github.com/Heptagram-Bot/api/compare/v0.1.0...v0.2.0) (2021-08-10)
 
 
@@ -28,3 +37,6 @@
 * diceroll and coinflip routes ([dc8e66c](https://github.com/Heptagram-Bot/api/commit/dc8e66cda8c8c28a5f99c50520424d0822e0277a))
 * Query constraints for routes ([ca97955](https://github.com/Heptagram-Bot/api/commit/ca979556027355e90c4f58d5bec4fe584c05069b))
 * set up docker config ([efbd608](https://github.com/Heptagram-Bot/api/commit/efbd608d090e6ac7a65357d0a3ba4747a7afb1d5))
+
+
+
