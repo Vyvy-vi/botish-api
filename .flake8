@@ -3,7 +3,7 @@ max-line-length=120
 docstring-convention=all
 exclude=.cache,.venv,.env,.git,__pycache__,venv, env
 ignore=
-    B311,W503,E226,S311,T000
+    B311,W503,E226,S311,T000,E731
     # Missing Docstrings
     D100,D104,D105,D107,
     # Docstring Whitespace

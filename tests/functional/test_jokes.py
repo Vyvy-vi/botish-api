@@ -1,4 +1,3 @@
-import pytest
 from src.routes.jokes import jokes
 
 
@@ -113,4 +112,3 @@ def test_get_jokes(test_client):
     response = test_client.get(f"/jokes?num={len(jokes) - 1}")
     assert response.status_code == 200
     assert len(response.json()["jokes"]) == len(jokes) - 1
-
