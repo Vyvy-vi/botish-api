@@ -37,6 +37,3 @@
 * diceroll and coinflip routes ([dc8e66c](https://github.com/Heptagram-Bot/api/commit/dc8e66cda8c8c28a5f99c50520424d0822e0277a))
 * Query constraints for routes ([ca97955](https://github.com/Heptagram-Bot/api/commit/ca979556027355e90c4f58d5bec4fe584c05069b))
 * set up docker config ([efbd608](https://github.com/Heptagram-Bot/api/commit/efbd608d090e6ac7a65357d0a3ba4747a7afb1d5))
-
-
-
