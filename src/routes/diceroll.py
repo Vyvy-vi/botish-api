@@ -6,7 +6,7 @@ router = APIRouter()
 
 
 @router.get("/diceroll")
-def roll_dice(
+async def roll_dice(
     num: int = Query(1, ge=1, le=10000), sides: int = Query(6, ge=3, le=10000)
 ):
     return {
