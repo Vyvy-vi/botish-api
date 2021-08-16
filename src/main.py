@@ -19,7 +19,7 @@ app.include_router(diceroll.router)
 
 
 @app.get("/")
-def index():
+async def index():
     body = "<h1>The Heptagram API</h1>"
     return responses.HTMLResponse(content=body)
 
