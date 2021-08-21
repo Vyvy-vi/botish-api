@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI, responses
 
 # from pydantic import BaseModel
-from .routes import coinflip, diceroll, jokes
+from .routes import coinflip, diceroll, jokes, quotes
 
 app = FastAPI(
     title="heptagram-api",
@@ -16,7 +16,7 @@ app = FastAPI(
 app.include_router(coinflip.router)
 app.include_router(jokes.router)
 app.include_router(diceroll.router)
-
+app.include_router(quotes.router)
 
 @app.get("/")
 async def index():
