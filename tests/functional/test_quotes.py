@@ -12,7 +12,7 @@ def test_all_quotes(test_client):
     assert response.json()["quotes"][0] == {
         "id": 0,
         "quote": "Quotes are going through",
-        "author": "potato"
+        "author": "potato",
     }
 
 
@@ -24,7 +24,7 @@ def test_quotes_by_id(test_client):
     assert response.json() == {
         "id": 0,
         "quote": "Quotes are going through",
-        "author": "potato"
+        "author": "potato",
     }
 
     # Check if non-number IDs get flagged

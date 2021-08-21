@@ -18,6 +18,7 @@ app.include_router(jokes.router)
 app.include_router(diceroll.router)
 app.include_router(quotes.router)
 
+
 @app.get("/")
 async def index():
     body = "<h1>The Heptagram API</h1>"
