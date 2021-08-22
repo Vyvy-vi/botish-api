@@ -1,10 +1,11 @@
 import random
 
 from fastapi import APIRouter, Path, Query
+from ..dependencies import get_json
 
 router = APIRouter()
 
-jokes = ["Jokes are going through", "hehe this is a joke", "more jokes"]
+jokes = get_json("jokes")
 
 
 @router.get("/jokes/all")
