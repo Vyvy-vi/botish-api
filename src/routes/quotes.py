@@ -1,12 +1,14 @@
 import random
 
 from fastapi import APIRouter, Path, Query
+
 from ..dependencies import get_json
 
 router = APIRouter()
 
 quotes = get_json("quotes")
 print(f"Quotes - {quotes}\n")
+
 
 @router.get("/quotes/all")
 async def all_quotes():
@@ -24,7 +26,7 @@ async def quotes_by_id(quote_id: int = Path(..., ge=0, lt=len(quotes))):
     return {
         "id": int(quote_id),
         "quote": quotes[quote_id][0],
-        "author": quotes[quote_id][1]
+        "author": quotes[quote_id][1],
     }
 
 

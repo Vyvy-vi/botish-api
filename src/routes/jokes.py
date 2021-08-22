@@ -1,6 +1,7 @@
 import random
 
 from fastapi import APIRouter, Path, Query
+
 from ..dependencies import get_json
 
 router = APIRouter()
