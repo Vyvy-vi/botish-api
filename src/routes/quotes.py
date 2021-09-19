@@ -7,7 +7,6 @@ from ..dependencies import get_json
 router = APIRouter()
 
 quotes = get_json("quotes")
-print(f"Quotes - {quotes}\n")
 
 
 @router.get("/quotes/all")

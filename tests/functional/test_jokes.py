@@ -1,3 +1,5 @@
+import random
+
 from src.routes.jokes import jokes
 
 
@@ -11,7 +13,14 @@ def test_all_jokes(test_client):
     # Check if the first test joke is valid
     assert response.json()["jokes"][0] == {
         "id": 0,
-        "joke": "Jokes are going through",
+        "joke": jokes[0],
+    }
+
+    # Check if a random quote is valid
+    random_index = random.randint(0, len(jokes) - 1)
+    assert response.json()["jokes"][random_index] == {
+        "id": random_index,
+        "joke": jokes[random_index],
     }
 
 
@@ -20,7 +29,7 @@ def test_jokes_by_id(test_client):
     assert response.status_code == 200
 
     # Check if the test joke is valid
-    assert response.json() == {"id": 0, "joke": "Jokes are going through"}
+    assert response.json() == {"id": 0, "joke": jokes[0]}
 
     # Check if non-number IDs get flagged
     response = test_client.get("/jokes/abcd")
