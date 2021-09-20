@@ -26,7 +26,7 @@ black = "^21.9b0"
 isort = "^5.9.3"
 pytest = "^6.2.5"
 pre-commit = "^2.15.0"
-taskipy = "^1.8.1"
+taskipy = "^1.8.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
