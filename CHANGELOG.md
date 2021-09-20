@@ -1,3 +1,20 @@
+# [0.5.0](https://github.com/Heptagram-Bot/api/compare/v0.4.0...v0.5.0) (2021-09-20)
+
+
+### Features
+
+* add metadata for api(auto-versioning) ([8cd366a](https://github.com/Heptagram-Bot/api/commit/8cd366aa342579d8086bc961bc5d7a43a8937642))
+* add more jokes ([6a601a3](https://github.com/Heptagram-Bot/api/commit/6a601a3e6581a4bd931b38ccc77e5d284307d034))
+* add more quotes ([f8d787a](https://github.com/Heptagram-Bot/api/commit/f8d787ad8c812ed3f8cc2834bbf10f038971aa9c))
+* add quotes route ([6a9558a](https://github.com/Heptagram-Bot/api/commit/6a9558ac8921a505fbd3d69662b8559f24e9751b))
+* shift to async functions ([6b1e1a2](https://github.com/Heptagram-Bot/api/commit/6b1e1a2b06b898059479a901ed42b3327d1f27a0))
+* tests for encouragements route ([5b5ffdf](https://github.com/Heptagram-Bot/api/commit/5b5ffdf5be64b4f2200f21e0fc536614288f902a))
+* update joke data ([bd4f423](https://github.com/Heptagram-Bot/api/commit/bd4f4236138d0be6b8f10390f237990d2bcf437b))
+* update quote data ([fa619ff](https://github.com/Heptagram-Bot/api/commit/fa619ffe4809b899e13b261ea34806ebcdc703dd))
+* use json files ([6d1d0f6](https://github.com/Heptagram-Bot/api/commit/6d1d0f63bd5a4c5393969ba9a7ecf07e0aeb346a))
+
+
+
 # [0.4.0](https://github.com/Heptagram-Bot/api/compare/v0.3.0...v0.4.0) (2021-08-13)
 
 
@@ -46,3 +63,6 @@
 * diceroll and coinflip routes ([dc8e66c](https://github.com/Heptagram-Bot/api/commit/dc8e66cda8c8c28a5f99c50520424d0822e0277a))
 * Query constraints for routes ([ca97955](https://github.com/Heptagram-Bot/api/commit/ca979556027355e90c4f58d5bec4fe584c05069b))
 * set up docker config ([efbd608](https://github.com/Heptagram-Bot/api/commit/efbd608d090e6ac7a65357d0a3ba4747a7afb1d5))
+
+
+
