@@ -1,25 +1,28 @@
 import uvicorn
 from fastapi import FastAPI, responses
 
+from .dependencies import get_meta
+from .routes import coinflip, diceroll, jokes, quotes
+
 # from pydantic import BaseModel
-from .routes import coinflip, diceroll, jokes
+
+META = get_meta()
 
 app = FastAPI(
-    title="heptagram-api",
-    description="An API for the Heptagram Bot",
-    contact={"name": "Vyvy-vi", "url": "https://github.com/Vyvy-vi"},
-    license_info={
-        "name": "BSD-3-Clause",
-        "url": "https://github.com/Heptagram-Bot/api/blob/master/LICENSE.md",
-    },
+    title=META["name"],
+    description=META["description"],
+    contact=META["author"],
+    license_info=META["license"],
+    version=META["version"],
 )
 app.include_router(coinflip.router)
 app.include_router(jokes.router)
 app.include_router(diceroll.router)
+app.include_router(quotes.router)
 
 
 @app.get("/")
-def index():
+async def index():
     body = "<h1>The Heptagram API</h1>"
     return responses.HTMLResponse(content=body)
 
