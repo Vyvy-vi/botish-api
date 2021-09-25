@@ -52,7 +52,7 @@ def test_coinflip_num(test_client):
         assert result in ["Heads", "Tails"]
 
 
-def test_roll_dice_errors(test_client):
+def test_flip_coin_errors(test_client):
     # Check if it errors out
     response = test_client.get("/coinflip/3")
     assert response.status_code == 404

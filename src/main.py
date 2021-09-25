@@ -35,4 +35,4 @@ async def index(request: Request):
 
 
 if __name__ == "__main__":
-    uvicorn.run("src.main:app")
+    uvicorn.run("src.main:app")  # pragma: no cover
