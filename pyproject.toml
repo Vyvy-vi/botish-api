@@ -16,9 +16,9 @@ aiofiles = "^0.7.0"
 Jinja2 = "^3.0.1"
 itsdangerous = "^2.0.1"
 python-dotenv = "^0.19.0"
-pre-commit = "^2.15.0"
 requests = "^2.26.0"
 toml = "^0.10.2"
+pytest-cov = "^2.12.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
@@ -40,4 +40,10 @@ isort = "isort ."
 black = "black ."
 start = "uvicorn src.main:app"
 precommit = "pre-commit install --hook-type pre-commit --hook-type pre-push"
-test = "pytest ."
+test = "pytest --cov=src tests/"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
