@@ -512,7 +512,7 @@ full = ["aiofiles", "graphene", "itsdangerous", "jinja2", "python-multipart", "p
 
 [[package]]
 name = "taskipy"
-version = "1.8.2"
+version = "1.9.0"
 description = "tasks runner for python projects"
 category = "dev"
 optional = false
@@ -608,6 +608,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 lock-version = "1.1"
 python-versions = "^3.8"
 content-hash = "4996f328aadcafb12ba31863ce9552778c0007ba6a4dbc49412f5613088b8a33"
+content-hash = "ebde0a5b77dc9fd5c2bf34677810f3ee866359c5c610c563eca93ca113dc8f8d"
 
 [metadata.files]
 aiofiles = [
@@ -977,8 +978,8 @@ starlette = [
     {file = "starlette-0.14.2.tar.gz", hash = "sha256:7d49f4a27f8742262ef1470608c59ddbc66baf37c148e938c7038e6bc7a998aa"},
 ]
 taskipy = [
-    {file = "taskipy-1.8.2-py3-none-any.whl", hash = "sha256:24b899ae17908fe9a61f4dc596792d5d2afef471ecfd8c6e9abb68a9568b40b7"},
-    {file = "taskipy-1.8.2.tar.gz", hash = "sha256:36e958f646f2c435b39f748b8bbdb0b9c33a2c4a96b293427feaf48ad4e2caa0"},
+    {file = "taskipy-1.9.0-py3-none-any.whl", hash = "sha256:02bd2c51c7356ed3f7f8853210ada1cd2ab273e68359ee865021c3057eec6615"},
+    {file = "taskipy-1.9.0.tar.gz", hash = "sha256:449c160b557cdb1d9c17097a5ea4aa0cd5223723ddbaaa5d5032dd16274fb8f0"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
