@@ -190,7 +190,7 @@ a {
     .api::before {
         width: 6%;
     }
-    
+
     .home::before {
         width: 3.3%;
     }
@@ -198,13 +198,13 @@ a {
     .server::before {
         width: 10%;
     }
-    
+
     .commands::before {
         width: 8%;
     }
 }
 
-/* .login-with-discord {
+/* .login-with-github {
     margin-right: 1rem;
     padding: 1px 5px;
     background-color: #7289da;
@@ -283,15 +283,6 @@ h2 {
     text-align: center;
 }
 
-.credit-midouwebdev {
-    text-align: center;
-}
-
-.credit-midouwebdev a {
-    text-decoration: none;
-    color: #fbf207;
-}
-
 .introducing-api {
     color: white;
     text-align: center;
@@ -299,15 +290,6 @@ h2 {
 
 body {
     background-color: #2c2f33;
-}
-
-.attribution {
-    margin-top: 3rem;
-    font-size: 16px;
-}
-
-.vyvy {
-    color: #fbf207;
 }
 
 .introducing-links {

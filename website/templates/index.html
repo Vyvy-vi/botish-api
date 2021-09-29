@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#ffff00" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Heptagram API</title>
+
+    <meta name="theme-color" content="#FFF826" />
     <meta name="title" content="Heptagram API">
     <meta name="description" content="The heptagram API is written in Python with Fastapi, and reduces our reliability on 3rd-party APIs.">
-    <meta name="keywords" content="Heptagram, Heptagram Bot, Heptagram open source, Heptagram Discord Bot, Bot, Discord Bot, Moderation Discord, Discord Server Bot, Music Bot, Rules Bot, The Discord Bot, All-in-one discord bot, open source discord bot">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <meta name="author" content="Heptagram Team">
+    <meta name="keywords" content="Heptagram, Heptagram Bot, Heptagram API, Heptagram Open Source, Standalone API for bots, Open Source API">
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Heptagram API" />
     <meta property="og:description" content="The heptagram API is written in Python with Fastapi, and reduces our reliability on 3rd-party APIs." />
     <meta property="og:url" content="https://api.heptagram.xyz" />
-    <meta property="og:site_name" content="https://api.heptagram.xyz" />
+    <meta property="og:site_name" content="Heptagram API" />
     <meta property="og:image" content="https://heptagram.xyz/img/full-heptagram-logo.png" />
-    <title>Heptagram API</title>
-    <link rel="icon" href="{{ url_for('static', path='/img/favicon.ico') }}" type="image/x-icon">
+
+
+    <link rel="icon" href="{{ url_for('static', path='./img/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/64fdbfc31c.js" crossorigin="anonymous"></script>
@@ -31,16 +32,16 @@
             <img src="{{ url_for('static', path='/img/full-heptagram-logo.png') }}" alt="Heptagram Logo" class="logo">
             <ul class="nav-menu">
                 <li class="nav-item second">
-                    <a href="index.html" class="nav-link home active">Home</a>
+                    <a href="#" class="nav-link home active">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="https://discord.gg/HSupF99kpq" class="nav-link server">Support Server</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url_for('templates', path='/documentation.html') }}" class="nav-link commands">Documentation</a>
+                    <a href="./docs" class="nav-link commands">Documentation</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url_for('templates', path='/legals.html') }}" class="nav-link api">Legals</a>
+                    <a href="./legals" class="nav-link api">Legals</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -54,9 +55,6 @@
         <div class="introducing-api">
             <h1>Heptagram API v0.0.2</h1>
             <h2>The heptagram API is written in Python with Fastapi, and reduces our reliability on 3rd-party APIs.</h2>
-            <p class="attribution">
-            The API was developed by <a class="vyvy" href="https://github.com/Vyvy-vi">Vyom Jain</a></p>
-            </p>
         </div>
         <div class="introducing-links">
             <h3>Links :</h3>
@@ -67,10 +65,10 @@
                 </a>
             </div>
             <div class="link">
-                <a class="api-link" href="{{ url_for('templates', path='/documentation.html') }}">
+                <a class="api-link" href="./docs">
                     <i class="far fa-file-alt"></i>
                     API Docs
-                </a>  
+                </a>
             </div>
         </div>
     </main>
@@ -89,14 +87,10 @@
             <p class="footer-links">
                 Links
             </p>
-            <a href="https://heptagram.xyz">Heptgram Bot</a>
+            <a href="https://heptagram.xyz">Heptagram Bot</a>
             <a href="https://discord.gg/HSupF99kpq">Support Server</a>
-            <a href="{{ url_for('templates', path='/documentation.html') }}">Documentation</a>
-            <a href="{{ url_for('templates', path='/legals.html') }}">Legals</a>
-        </div>
-        <div class="credit-midouwebdev">
-            <p>This website was designed and coded by the Heptagram Website team, lead by <a class="main-dev" href="https://github.com/MidouWebDev">MidouWebDev</a></p>
-            <p>A special thanks to <a class="main-dev" href="https://www.github.com/Vyvy-vi">Vyom Jain</a> for creating this API.</p>
+            <a href="./docs">Documentation</a>
+            <a href="./legals">Legals</a>
         </div>
     </footer>
 </body>

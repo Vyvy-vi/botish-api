@@ -20,6 +20,7 @@ app = FastAPI(
 )
 
 app.mount("/static", StaticFiles(directory="website/static"), name="static")
+app.mount("/guide", StaticFiles(directory="guide", html=True), name="guide")
 
 app.include_router(coinflip.router)
 app.include_router(jokes.router)
@@ -32,6 +33,11 @@ templates = Jinja2Templates(directory="website/templates")
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+
+@app.get("/legals", response_class=HTMLResponse)
+async def legals(request: Request):
+    return templates.TemplateResponse("legals.html", {"request": request})
 
 
 if __name__ == "__main__":
