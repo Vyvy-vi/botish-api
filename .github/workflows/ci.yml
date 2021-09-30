@@ -77,7 +77,7 @@ jobs:
     - name: Test code with Pytest
       run: |
         # pytest .
-        echo "No tests found..."
+        poetry run task test
 
     # Prepare the Pull Request Payload artifact. If this fails, we
     # we fail silently using the `continue-on-error` option. It's
