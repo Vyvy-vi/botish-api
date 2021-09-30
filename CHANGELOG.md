@@ -1,3 +1,20 @@
+# [0.6.0](https://github.com/Heptagram-Bot/api/compare/v0.5.0...v0.6.0) (2021-09-30)
+
+
+### Bug Fixes
+
+* clean up site ([1f152fb](https://github.com/Heptagram-Bot/api/commit/1f152fbf788acd6495f770a279474b2f9b5e31fe))
+
+
+### Features
+
+* add basic landing page ([026776f](https://github.com/Heptagram-Bot/api/commit/026776f1db56a5492a992ae6dbd191f01ffe33c4))
+* add static guides with docsify ([ce4d426](https://github.com/Heptagram-Bot/api/commit/ce4d426977bb0d8dbafae7bea9ef4840b92e8d6c))
+* Created new landing page ([401f9bd](https://github.com/Heptagram-Bot/api/commit/401f9bd399d9a41126359f86568fa8a27d4365d1))
+* update tests and add coverage ([db978ee](https://github.com/Heptagram-Bot/api/commit/db978eeef4aa2a10e9c946b389108f2f9832940a))
+
+
+
 # [0.5.0](https://github.com/Heptagram-Bot/api/compare/v0.4.0...v0.5.0) (2021-09-20)
 
 
@@ -63,3 +80,6 @@
 * diceroll and coinflip routes ([dc8e66c](https://github.com/Heptagram-Bot/api/commit/dc8e66cda8c8c28a5f99c50520424d0822e0277a))
 * Query constraints for routes ([ca97955](https://github.com/Heptagram-Bot/api/commit/ca979556027355e90c4f58d5bec4fe584c05069b))
 * set up docker config ([efbd608](https://github.com/Heptagram-Bot/api/commit/efbd608d090e6ac7a65357d0a3ba4747a7afb1d5))
+
+
+
