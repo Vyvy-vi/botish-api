@@ -1,6 +1,6 @@
 # Features
 
-This API has a variety of end-points for different features. For more detailed information, check out the [API docs](https://api.heptagram.xyz/docs). 
+This API has a variety of end-points for different features. For more detailed information, check out the [API docs](https://api.heptagram.xyz/docs).
 
 Here are some of the features:
 

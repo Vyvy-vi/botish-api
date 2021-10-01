@@ -15,4 +15,3 @@
 
 - [API Docs](https://api.heptagram.xyz/docs)
 - [Support Server](https://discord.gg/HSupF99kpq)
-
