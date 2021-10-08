@@ -27,4 +27,3 @@
 Copyright © 2021 [Heptagram](https://github.com/Heptagram)
 
 This document was inspired by [@nhcarrigan's](https://nhcarrigan.com) style of making documentation
-
