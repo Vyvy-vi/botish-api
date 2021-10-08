@@ -17,8 +17,12 @@
       loadSidebar: true,
       auto2top: true,
       themeColor: '#FFD300',
-      relativePath: true,
       maxLevel: 4,
+      alias: {
+        '/legals': '/legals/',
+        '/usage': '/usage/',
+        '/contributing': '/contributing/'
+      }
       // subMaxLevel: 2
     }
   </script>
@@ -26,7 +30,9 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <!-- Copy to Clipboard Plugin -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-  <!-- Python syntax -->
+  <!-- Python syntax highlighting -->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+  <!-- Nice Fancy Flexible alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1"></script>
 </body>
 </html>
