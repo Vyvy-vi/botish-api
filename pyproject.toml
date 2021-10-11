@@ -21,7 +21,7 @@ toml = "^0.10.2"
 pytest-cov = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
-flake8 = "^3.9.2"
+flake8 = "^4.0.0"
 black = "^21.9b0"
 isort = "^5.9.3"
 pytest = "^6.2.5"
