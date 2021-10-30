@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -43,9 +43,9 @@ async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.get("/legals", response_class=HTMLResponse)
+@app.get("/legals", response_class=RedirectResponse, status_code=308)
 async def legals(request: Request):
-    return templates.TemplateResponse("legals.html", {"request": request})
+    return "../guide/#/legals"
 
 
 if __name__ == "__main__":

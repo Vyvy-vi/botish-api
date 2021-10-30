@@ -6,6 +6,3 @@ Before you start working on your issue, it is recommended that you check out the
 
 > [!TIP]
 > It would be recommended that API routes are defined as async functions
-
-> [!TIP|style:flat]
-> It would be recommended that API routes are defined as async functions
