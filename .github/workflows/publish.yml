@@ -32,5 +32,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/heptagram-bot/api:v${{ steps.get_version.outputs.version_tag}}
-            ghcr.io/heptagram-bot/api:latest
+            ghcr.io/Vyvy-vi/api:v${{ steps.get_version.outputs.version_tag}}
+            ghcr.io/Vyvy-vi/api:latest

@@ -8,7 +8,7 @@ on:
 jobs:
   changelog:
     runs-on: ubuntu-latest
-    if: github.repository == 'Heptagram-Bot/api'
+    if: github.repository == 'Vyvy-vi/api'
 
     steps:
       - uses: actions/checkout@v2
