@@ -13,5 +13,4 @@
   - [Terms & Conditions](terms.md)
 
 
-- [API Docs](https://api.heptagram.xyz/docs)
-- [Support Server](https://discord.gg/HSupF99kpq)
+- [API Docs](https://api.bottish.xyz/docs)

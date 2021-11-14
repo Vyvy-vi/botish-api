@@ -17,7 +17,7 @@ def get_meta():
             "description": f["description"],
             "license": {
                 "name": f["license"],
-                "url": "https://github.com/Heptagram-Bot/api/blob/master/LICENSE.md",
+                "url": "https://github.com/Vyvy-vi/api/blob/master/LICENSE.md",
             },
             "repo": f["repository"],
             "author": {"name": "Vyvy-vi", "url": "https://github.com/Vyvy-vi"},

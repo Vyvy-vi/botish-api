@@ -1,6 +1,6 @@
 # Heptagram API
 
-This is an API made for the [Heptagram Bot](https://github.com/Heptagram-Bot/).
+This is an API originaly made for the [Heptagram Bot](https://github.com/Heptagram-Bot/) project, now called labeled under the  [botish.xyz](https://api.botish.xyz/) domain, maintained by Vyvy-Vi.
 For contributing to the project, check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## Features
