@@ -11,7 +11,7 @@ Here are a few example requests.
 
 ### With Fetch API
 ```js
-fetch('https://api.heptagram.xyz/jokes/1')
+fetch('https://api.botish.xyz/jokes/1')
   .then((response) => {
     return response.json()
   })
@@ -29,7 +29,7 @@ fetch('https://api.heptagram.xyz/jokes/1')
 const axios = require('axios');
 
 // Make a request for a joke with a give joke_id
-axios.get('https://api.heptagram.xyz/jokes/1')
+axios.get('https://api.botish.xyz/jokes/1')
   .then(function (response) {
     // handle success
     console.log(response.json());
@@ -45,7 +45,7 @@ axios.get('https://api.heptagram.xyz/jokes/1')
 // If you want to use async-await, add the async keyword to your outer function/method
 async function getJoke() {
   try {
-    const response = await axios.get('https://api.heptaram.xyz/jokes/1');
+    const response = await axios.get('https://api.botish.xyz/jokes/1');
     console.log(response.json());
   } catch (error) {
     console.error(error);
@@ -63,7 +63,7 @@ async function getJoke() {
 ```py
 import requests
 
-response = requests.get("https://api.heptagram.xyz/jokes/1")
+response = requests.get("https://api.botish.xyz/jokes/1")
 print(response.json())
 ```
 
@@ -75,7 +75,7 @@ import asyncio
 async def main():
 
     async with aiohttp.ClientSession() as session:
-        async with session.get('https://api.heptagram.xyz/jokes/1') as response:
+        async with session.get('https://api.botish.xyz/jokes/1') as response:
 
             data = await response.json()
             print(data)

@@ -27,7 +27,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.mount("/static", StaticFiles(directory="website/static"), name="static")
+# app.mount("/static", StaticFiles(directory="website/static"), name="static")
 app.mount("/guide", StaticFiles(directory="guide", html=True), name="guide")
 
 app.include_router(coinflip.router)
@@ -40,7 +40,10 @@ templates = Jinja2Templates(directory="website/templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return "hi"
+
+
+#   return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.get("/legals", response_class=HTMLResponse)

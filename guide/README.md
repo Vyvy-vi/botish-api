@@ -1,8 +1,8 @@
-# Heptagram API
+# Botish API
 
-Heptagram API is a FastAPI application made for the Heptagram Bot(and other bots), that aims at reducing the reliance on multiple 3rd party libraries.
+Botish API is a FastAPI application made for discord bots, that aims at reducing the reliance on multiple 3rd party libraries.
 
-This is the contribution guide for the Heptagram API. A live version of the API can be operated [here](https://api.heptagram.xyz/docs).
+This is the contribution guide for the botish API. A live version of the API can be operated [here](https://api.botish.xyz/docs).
 
 Before proceding, do go through the `CODE_OF_CONDUCT.md` and `CONTRIBUTING.md` files, and try to follow our development and community guidelines.
 

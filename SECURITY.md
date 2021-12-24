@@ -2,7 +2,7 @@
 
 ## Reporting a security Vulnerability
 
-If you see any security issues or vulnerabilities, kindly DO NOT open a github issue for the same. Instead alert us about this in our bot's Support Tickets, or directly convey it to `j-dogcoder` or `Vyvy-vi`.
+If you see any security issues or vulnerabilities, kindly DO NOT open a github issue for the same. Instead convey it to `Vyvy-vi` on Twitter or Discord DMs.
 
 ## Reporting potential security Improvements
 
