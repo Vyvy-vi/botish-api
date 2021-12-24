@@ -13,4 +13,4 @@
   - [Terms & Conditions](terms.md)
 
 
-- [API Docs](https://api.bottish.xyz/docs)
+- [API Docs](https://api.botish.xyz/docs)
