@@ -16,7 +16,7 @@ aiofiles = "^0.8.0"
 Jinja2 = "^3.0.2"
 itsdangerous = "^2.0.1"
 python-dotenv = "^0.19.1"
-requests = "^2.26.0"
+requests = "^2.28.1"
 toml = "^0.10.2"
 pytest-cov = "^3.0.0"
 
