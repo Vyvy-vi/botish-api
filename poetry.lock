@@ -541,7 +541,7 @@ full = ["itsdangerous", "jinja2", "python-multipart", "pyyaml", "requests", "gra
 
 [[package]]
 name = "taskipy"
-version = "1.9.0"
+version = "1.10.1"
 description = "tasks runner for python projects"
 category = "dev"
 optional = false
@@ -551,7 +551,7 @@ python-versions = ">=3.6,<4.0"
 colorama = ">=0.4.4,<0.5.0"
 mslex = {version = ">=0.3.0,<0.4.0", markers = "sys_platform == \"win32\""}
 psutil = ">=5.7.2,<6.0.0"
-toml = ">=0.10.0,<0.11.0"
+tomli = ">=1.2.3,<2.0.0"
 
 [[package]]
 name = "toml"
@@ -1015,8 +1015,8 @@ starlette = [
     {file = "starlette-0.16.0.tar.gz", hash = "sha256:e1904b5d0007aee24bdd3c43994be9b3b729f4f58e740200de1d623f8c3a8870"},
 ]
 taskipy = [
-    {file = "taskipy-1.9.0-py3-none-any.whl", hash = "sha256:02bd2c51c7356ed3f7f8853210ada1cd2ab273e68359ee865021c3057eec6615"},
-    {file = "taskipy-1.9.0.tar.gz", hash = "sha256:449c160b557cdb1d9c17097a5ea4aa0cd5223723ddbaaa5d5032dd16274fb8f0"},
+    {file = "taskipy-1.10.1-py3-none-any.whl", hash = "sha256:9b38333654da487b6d16de6fa330b7629d1935d1e74819ba4c5f17a1c372d37b"},
+    {file = "taskipy-1.10.1.tar.gz", hash = "sha256:6fa0b11c43d103e376063e90be31d87b435aad50fb7dc1c9a2de9b60a85015ed"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
