@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: get project version
         id: get_version
         run: |
