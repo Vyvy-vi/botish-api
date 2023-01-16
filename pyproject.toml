@@ -24,7 +24,7 @@ pytest-cov = "^3.0.0"
 flake8 = "^4.0.1"
 black = "^21.9b0"
 isort = "^5.9.3"
-pytest = "^6.2.5"
+pytest = "^7.2.1"
 pre-commit = "^2.20.0"
 taskipy = "^1.10.1"
 
